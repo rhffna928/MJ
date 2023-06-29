@@ -37,16 +37,14 @@
                         </li>
                     </ul>
                     <c:choose>
-                        <c:when test="${m_id != null}"><!-- 로그인이 이루어진 경우 -->
+                        <c:when test="${member != null}"><!-- 로그인이 이루어진 경우 -->
                             <ul class="user-login">
                                 <li>
-                                    <p><span>${m_id}</span>님 환영합니다!</p>
+                                    <p><span>${member.m_id}</span>님 환영합니다!</p>
+                                    <p><span>${member.m_grade}</span>등급입니다.!</p>
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/logout.do">로그아웃</a>
-                                </li>
-                                <li>
-                                    <a href="${pageContext.request.contextPath}/Notice">고객센터</a>
                                 </li>
                             </ul>
                         </c:when>
@@ -57,9 +55,6 @@
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/save.do">회원가입</a>
-                                </li>
-                                <li >
-                                    <a href="${pageContext.request.contextPath}/Notice">고객센터</a>
                                 </li>
                             </ul>
                         </c:otherwise>
